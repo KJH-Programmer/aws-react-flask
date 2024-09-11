@@ -1,0 +1,105 @@
+/* 중앙 정렬 및 레이아웃 설정 */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #626069;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.App {
+  width: 400px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: rgb(166, 161, 187);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3897f0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3078d3;
+}
+
+.Diaries {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.diary-title {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+}
+
+.diary-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #ffffff;
+}
+
+.diary-content.visible {
+  display: block;
+}
+
+.diary-buttons {
+  text-align: right; /* 버튼을 오른쪽 정렬 */
+}
+
+button.delete {
+  background-color: #ed4956;
+  width: auto;
+}
+
+button.delete:hover {
+  background-color: #d93025;
+}
+
+/* 회전 애니메이션 추가 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-spin {
+  animation: spin infinite 5s linear; /* 5초 동안 무한 회전 */
+  height: 100px; /* 원하는 크기로 조정 */
+}
