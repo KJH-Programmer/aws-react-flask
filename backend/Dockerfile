@@ -12,9 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 애플리케이션 파일 복사
 COPY . .
 
-# # 환경 변수 설정
-# ENV FLASK_APP=app.py
-# ENV FLASK_RUN_HOST=0.0.0.0
-
 # Flask 애플리케이션 실행 명령어
 CMD ["flask", "run", "--host=0.0.0.0"]
