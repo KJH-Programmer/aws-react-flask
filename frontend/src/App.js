@@ -8,13 +8,15 @@ function App() {
   const [content, setContent] = useState('');
   const [visibleDiaryId, setVisibleDiaryId] = useState(null); // 내용 표시 여부를 위한 상태
 
+  const API_URL = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     fetchDiaries();
   }, []);
 
   const fetchDiaries = async () => {
     try {
-      const response = await axios.get('http://13.125.214.79:5000/diaries');
+      const response = await axios.get(`${API_URL}/diaries`);
       setDiaries(response.data);
     } catch (error) {
       console.error('Error fetching diaries', error);
@@ -23,7 +25,7 @@ function App() {
 
   const handleCreateDiary = async () => {
     try {
-      await axios.post('http://13.125.214.79:5000/diaries', { title, content });
+      await axios.post(`${API_URL}/diaries`, { title, content });
       setTitle('');
       setContent('');
       fetchDiaries();
@@ -34,7 +36,7 @@ function App() {
 
   const handleDeleteDiary = async (id) => {
     try {
-      await axios.delete(`http://13.125.214.79:5000/diaries/${id}`);
+      await axios.delete(`${API_URL}/diaries/${id}`);
       fetchDiaries();
     } catch (error) {
       console.error('Error deleting diary', error);
