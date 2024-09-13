@@ -149,3 +149,6 @@ def delete_diary(diary_id):
 
 def upload_file():
     pass
+
+def uploading_files():
+    pass
